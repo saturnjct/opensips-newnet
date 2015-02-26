@@ -266,7 +266,6 @@ static mi_export_t mi_cmds[] = {
 
 struct module_exports exports = {
 	"rtpengine",
-	MOD_TYPE_DEFAULT,/* class of this module */
 	MODULE_VERSION,
 	DEFAULT_DLFLAGS, /* dlopen flags */
 	cmds,
