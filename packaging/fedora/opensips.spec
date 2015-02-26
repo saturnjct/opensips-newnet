@@ -5,7 +5,7 @@
 %endif
 %endif
 
-%global EXCLUDE_MODULES sngtc osp cachedb_cassandra cachedb_couchbase cachedb_mongodb %{?disable_snmpstats} %{?el5:db_perlvdb} %{?el5:cachedb_redis} %{!?_with_oracle:db_oracle} lua
+%global EXCLUDE_MODULES sngtc osp cachedb_cassandra cachedb_couchbase cachedb_mongodb %{?disable_snmpstats} %{?el5:db_perlvdb} %{?el5:cachedb_redis} %{!?_with_oracle:db_oracle} lua event_rabbitmq redis
 
 Summary:  Open Source SIP Server
 Name:     opensips
@@ -191,16 +191,16 @@ Requires: %{name} = %{version}-%{release}
 This is a module which provides a UNIX/UDP SOCKET transport layer
 implementation for the Event Interface.
 
-%package  event_rabbitmq
-Summary:  Event RabbitMQ module
-Group:    System Environment/Daemons
-Requires: %{name} = %{version}-%{release}
-BuildRequires:	librabbitmq-devel
-
-%description  event_rabbitmq
-This module provides the implementation of a RabbitMQ client for the Event Interface.
-It is used to send AMQP messages to a RabbitMQ server each time the Event Interface
-triggers an event subscribed for.
+#%package  event_rabbitmq
+#Summary:  Event RabbitMQ module
+#Group:    System Environment/Daemons
+#Requires: %{name} = %{version}-%{release}
+#BuildRequires:	librabbitmq-devel
+#
+#%description  event_rabbitmq
+#This module provides the implementation of a RabbitMQ client for the Event Interface.
+#It is used to send AMQP messages to a RabbitMQ server each time the Event Interface
+#triggers an event subscribed for.
 
 %package  event_route
 Summary:  Route triggering based on events
@@ -516,16 +516,16 @@ Requires: %{name} = %{version}-%{release}
 Helps implement your own OpenSIPS extensions in Python
 
 %if %{undefined el5}
-%package  redis
-Summary:  Redis connector
-Group:    System Environment/Daemons
-Requires: %{name} = %{version}-%{release}
-BuildRequires:  hiredis-devel
-
-%description  redis
-This module is an implementation of a cache system designed to work
-with a Redis server.
-%endif
+#%package  redis
+#Summary:  Redis connector
+#Group:    System Environment/Daemons
+#Requires: %{name} = %{version}-%{release}
+#BuildRequires:  hiredis-devel
+#
+#%description  redis
+#This module is an implementation of a cache system designed to work
+#with a Redis server.
+#%endif
 
 %package  regex
 Summary:  RegExp via PCRE library
@@ -1062,9 +1062,9 @@ chown -R %{name}:%{name} %{_sysconfdir}/%{name}
 %{_libdir}/opensips/modules/event_datagram.so
 %doc docdir/README.event_datagram
 
-%files event_rabbitmq
-%{_libdir}/opensips/modules/event_rabbitmq.so
-%doc docdir/README.event_rabbitmq
+#%files event_rabbitmq
+#%{_libdir}/opensips/modules/event_rabbitmq.so
+#%doc docdir/README.event_rabbitmq
 
 %files event_route
 %{_libdir}/opensips/modules/event_route.so
@@ -1205,10 +1205,10 @@ chown -R %{name}:%{name} %{_sysconfdir}/%{name}
 %{_libdir}/opensips/modules/python.so
 
 %if %{undefined el5}
-%files redis
-%{_libdir}/opensips/modules/cachedb_redis.so
-%doc docdir/README.cachedb_redis
-%endif
+#%files redis
+#%{_libdir}/opensips/modules/cachedb_redis.so
+#%doc docdir/README.cachedb_redis
+#%endif
 
 %files regex
 %{_libdir}/opensips/modules/regex.so
