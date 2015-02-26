@@ -5,7 +5,7 @@
 %endif
 %endif
 
-%global EXCLUDE_MODULES sngtc osp cachedb_cassandra cachedb_couchbase cachedb_mongodb %{?disable_snmpstats} %{?el5:db_perlvdb} cachedb_redis %{!?_with_oracle:db_oracle} lua event_rabbitmq redis
+%global EXCLUDE_MODULES sngtc osp cachedb_cassandra cachedb_couchbase cachedb_mongodb %{?disable_snmpstats} %{?el5:db_perlvdb} cachedb_redis %{!?_with_oracle:db_oracle} lua event_rabbitmq redis json
 
 Summary:  Open Source SIP Server
 Name:     opensips
@@ -251,14 +251,14 @@ Requires: %{name} = %{version}-%{release}
 %description  jabber
 Jabber module that integrates XODE XML parser for parsing Jabber messages.
 
-%package  json
-Summary:  A JSON variables within the script
-Group:    System Environment/Daemons
-Requires: %{name} = %{version}-%{release}
-
-%description  json
-This module introduces a new type of variable that provides both serialization and
-de-serialization from JSON format.
+#%package  json
+#Summary:  A JSON variables within the script
+#Group:    System Environment/Daemons
+#Requires: %{name} = %{version}-%{release}
+#
+#%description  json
+#This module introduces a new type of variable that provides both serialization and
+#de-serialization from JSON format.
 
 %package  ldap
 Summary:  LDAP connector
@@ -1086,9 +1086,9 @@ chown -R %{name}:%{name} %{_sysconfdir}/%{name}
 %{_libdir}/opensips/modules/jabber.so
 %doc docdir/README.jabber
 
-%files json
-%{_libdir}/opensips/modules/json.so
-%doc docdir/README.json
+#%files json
+#%{_libdir}/opensips/modules/json.so
+#%doc docdir/README.json
 
 %files ldap
 %{_libdir}/opensips/modules/ldap.so
