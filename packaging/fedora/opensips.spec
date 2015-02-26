@@ -886,6 +886,7 @@ chown -R %{name}:%{name} %{_sysconfdir}/%{name}
 %{_libdir}/opensips/modules/nathelper.so
 %{_libdir}/opensips/modules/nat_traversal.so
 %{_libdir}/opensips/modules/rtpproxy.so
+%{_libdir}/opensips/modules/rtpengine.so
 %{_libdir}/opensips/modules/options.so
 %{_libdir}/opensips/modules/path.so
 %{_libdir}/opensips/modules/pdt.so
@@ -966,6 +967,7 @@ chown -R %{name}:%{name} %{_sysconfdir}/%{name}
 %doc docdir/README.registrar
 %doc docdir/README.rr
 %doc docdir/README.rtpproxy
+%doc docdir/README.rtpengine
 %doc docdir/README.script_helper
 %doc docdir/README.signaling
 %doc docdir/README.sipcapture
