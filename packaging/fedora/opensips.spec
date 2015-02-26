@@ -5,7 +5,7 @@
 %endif
 %endif
 
-%global EXCLUDE_MODULES sngtc osp cachedb_cassandra cachedb_couchbase cachedb_mongodb %{?disable_snmpstats} %{?el5:db_perlvdb} %{?el5:cachedb_redis} %{!?_with_oracle:db_oracle} lua event_rabbitmq redis
+%global EXCLUDE_MODULES sngtc osp cachedb_cassandra cachedb_couchbase cachedb_mongodb %{?disable_snmpstats} %{?el5:db_perlvdb} cachedb_redis %{!?_with_oracle:db_oracle} lua event_rabbitmq redis
 
 Summary:  Open Source SIP Server
 Name:     opensips
