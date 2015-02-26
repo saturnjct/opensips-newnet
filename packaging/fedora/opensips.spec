@@ -515,7 +515,7 @@ Requires: %{name} = %{version}-%{release}
 %description  python
 Helps implement your own OpenSIPS extensions in Python
 
-%if %{undefined el5}
+#%if %{undefined el5}
 #%package  redis
 #Summary:  Redis connector
 #Group:    System Environment/Daemons
@@ -1204,7 +1204,7 @@ chown -R %{name}:%{name} %{_sysconfdir}/%{name}
 %files python
 %{_libdir}/opensips/modules/python.so
 
-%if %{undefined el5}
+#%if %{undefined el5}
 #%files redis
 #%{_libdir}/opensips/modules/cachedb_redis.so
 #%doc docdir/README.cachedb_redis
